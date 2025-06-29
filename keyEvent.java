@@ -1,0 +1,32 @@
+import javax.swing.*;
+import java.awt.*;
+
+class Babu extends JFrame
+{
+	public static void main(String args[])
+	{
+		JFrame frame = new JFrame("Applet viewer");
+		JLabel label = new JLabel("Enter any key: ");
+		label.setFont(new Font("Inter",Font.BOLD,20));
+		label.setHorizontalAlignment(label.CENTER);
+		frame.add(label);
+		frame.addKeyListener(new keyAdapter()
+		{
+			void keyPressed(keyEvent e)
+			{
+				label.setText("Key pressed: "+e.getKeyChar());
+				System.out.print("\nKey Pressed: "+e.getKeyChar());
+			}
+		});
+		
+		frame.setSize(600,600);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+}
+
+
+
+
+
+		
