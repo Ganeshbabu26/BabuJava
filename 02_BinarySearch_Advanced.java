@@ -1,5 +1,5 @@
 import java.util.*;
-class binarysearch
+class binarysearch1
 {
     public static int bs(int arr[],int target,int low,int high)
     {
@@ -35,15 +35,27 @@ class binarysearch
         {
             arr[i] = square(i);
         }
-        int index = bs(arr,n,0,arr.length-1);
-        if (index != -1)
+        int index= bs(arr,n,0,arr.length-1);
+        if (index != -1) 
         {
-            System.out.print(n+" found at index: "+index);
+            System.out.println(n + " is a square number of " + index);
+        } 
+        else 
+        {
+            // Find closest square
+            int closestIndex = 0;
+            int minDiff = Math.abs(arr[0] - n);
+            for (int i = 1; i < arr.length; i++) {
+            int diff = Math.abs(arr[i] - n);
+            if (diff < minDiff) 
+            {
+                minDiff = diff;
+                closestIndex = i;
+            }
         }
-        else
-        {
-            System.out.print(n+" is not found");
-        }   
+        System.out.println(n + " is not a perfect square.");
+        System.out.println("Closest square is " + arr[closestIndex] + " (which is " + closestIndex + "²)");
+        } 
         babu.close();
     }
 }
