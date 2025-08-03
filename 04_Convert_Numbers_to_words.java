@@ -10,7 +10,7 @@ class convert
         String n3[] = {"","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"};
         String n4[] = {"Hundred","Hundred and"};
         String n5[] = {"Thousand","Thousand and"};
-        System.out.print("Enter a number (between 1 and 100000): ");
+        System.out.print("Enter a number (between 1 and 10000): ");
         int n = babu.nextInt();
 
         if(n>0)
@@ -72,8 +72,15 @@ class convert
                 n = n/10;
 
                 int num1 = n%10;
-
-                if (num2!=0 && num3!=0 && num4!=0)          //1234    000
+                if(num2==0 && num3==1)                              //8017
+                {
+                    System.out.print(n1[num1] + " " + n5[1] + " " + n2[num4]); 
+                }
+                else if (num2!=0 && num3==1)                        //5712
+                {
+                    System.out.print(n1[num1] + " " + n5[1] + " " + n1[num2] + " " + n4[1] + " " + n2[num4]);  
+                }
+                else if (num2!=0 && num3!=0 && num4!=0)    //1234    000
                 {
                     System.out.print(n1[num1] + " " + n5[1] + " " + n1[num2] + " " + n4[1] + " " + n3[num3-1] + " " + n1[num4]);                    
                 }
@@ -112,7 +119,7 @@ class convert
             }
             else
             {
-                System.out.print("One lakhs");
+                System.out.print("No result");
             }
         }
         else
